@@ -1,4 +1,6 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class LoginController
 {
@@ -24,7 +26,8 @@ class LoginController
         exit();
     }
 
-    public function signOut(){
+    public function signOut()
+    {
         session_destroy();
         header("location:/");
         exit();
@@ -51,4 +54,38 @@ class LoginController
             exit();
         }
     }
+
+    public function enviarMailDeValidacion($email, $nombre, $estado_cuenta)
+    {
+        $mail = new PHPMailer(true);
+        try {
+            //Configuracion del servidor SMTP
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'quizStorm.unlam@gmail.com';
+            $mail->Password = '123456';
+            $mail->Port = 587;
+
+            // Configuración del remitente y destinatario
+            $mail->setFrom('quizStorm.unlam@gmail.com', 'QuizStorm');
+            $mail->addAddress($email, $nombre);
+
+            //enlace para la validacion
+            $enlaceValidacion = 'http://localhost/login/verificarUsuario?estado_cuenta=' . $estado_cuenta . '&email=' . $email;
+
+            // Contenido del correo
+            $mail->isHTML(true);
+            $mail->Subject = 'Checking PHP mail';
+            $mail->Body = '<h1>¡Gracias por registrarte!</h1> <br> <br> <h3>Estimado usuario, haga clic en el siguiente enlace para validar su cuenta: <a href="' . $enlaceValidacion  . '">Verificar cuenta</a> </h3>';
+            $mail->send();
+
+        } catch (Exception $e) {
+            header('Location:/autenticacion?mail=BAD');
+            exit();
 }
+
+    }
+
+}
+
