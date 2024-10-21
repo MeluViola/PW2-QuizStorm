@@ -6,7 +6,7 @@ class LoginModel
 
     public function __construct($database)
     {
-        $this->database = database;
+        $this->database = $database;
     }
 
     public function signIn($email, $contraseña)
