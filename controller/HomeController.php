@@ -2,7 +2,6 @@
 
 class HomeController
 {
-
     private $model;
     private $presenter;
 
@@ -12,10 +11,10 @@ class HomeController
         $this->presenter = $presenter;
     }
 
-    /*public function list()
+    public function list()
     {
         $this->presenter->show("home", []);
     }
-    */
+
 
 }

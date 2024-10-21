@@ -5,19 +5,21 @@ include_once(__DIR__ . "/../helpers/MustachePresenter.php");
 include_once(__DIR__ . "/../helpers/Mysqldatabase.php");
 include_once(__DIR__ . "/../helpers/Router.php");
 
-//Models
-include_once(__DIR__ . "/../model/LoginModel.php");
-include_once(__DIR__ . "/../model/RegisterModel.php");
-include_once(__DIR__ . "/../model/HomeModel.php");
-
 //Controllers
 include_once(__DIR__ . "/../controller/LoginController.php");
 include_once(__DIR__ . "/../controller/RegisterController.php");
 include_once(__DIR__ . "/../controller/HomeController.php");
+include_once __DIR__ . "/../controller/UserController.php";
+
+//Models
+include_once(__DIR__ . "/../model/LoginModel.php");
+include_once(__DIR__ . "/../model/RegisterModel.php");
+include_once(__DIR__ . "/../model/HomeModel.php");
+include_once(__DIR__ . "/../model/UserModel.php");
+
 
 //Vendor
 include_once(__DIR__ . '/../vendor/mustache/src/Mustache/Autoloader.php');
-
 
 class Configuration
 {
@@ -40,6 +42,10 @@ class Configuration
         return new HomeController($this->getHomeModel(), $this->getPresenter());
     }
 
+    public function getUserController(){
+        return new UserController($this->getUserModel(), $this->getPresenter());
+    }
+
 
     // Models
     private function getLoginModel(){
@@ -54,6 +60,10 @@ class Configuration
         return new HomeModel($this->getMysqldatabase());
     }
 
+    private function getUserModel()
+    {
+        return new UserModel($this->getMysqldatabase());
+    }
     // Helpers
     private function getMysqldatabase()
     {
@@ -76,5 +86,8 @@ class Configuration
     {
         return new Router($this, "getHomeController", "list");
     }
+
+
+
 }
 

@@ -9,31 +9,6 @@ body {
     background-color: #f7f7f7;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f1f1f1;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-nav a {
-    margin-right: 20px;
-    text-decoration: none;
-    color: black;
-}
-
-.logout a {
-    text-decoration: none;
-    color: black;
-}
-
 .profile-container {
     max-width: 800px;
     margin: 40px auto;
@@ -79,7 +54,7 @@ h2 {
 
 .weekly-position {
     font-size: 1.2em;
-    color: gold;
+    color: #ce4e4e;
     margin-top: 5px;
 }
 

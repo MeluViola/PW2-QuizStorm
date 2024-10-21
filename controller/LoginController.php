@@ -48,13 +48,22 @@ class LoginController
         } else {
             $usuarioVerificado = $this->LoginModel->verificarUsuario($estado_cuenta, $email);
             if ($usuarioVerificado) {
-
                 header('Location: /login?EXITO=1');;
             } else {
                 header('Location:/error?codError=333');
             }
             exit();
         }
+    }
+
+    //para que el perfil tenga el nombre de cada usuario (por ahora)
+    public function obtenerPerfilUsuario()
+    {
+        if (isset($_SESSION['email'])) {
+            $nombreJugador = $this->LoginModel->getNombreJugadorByEmail($_SESSION['email']);
+            return $nombreJugador; // Retorna los datos del usuario
+        }
+        return null;
     }
 }
 

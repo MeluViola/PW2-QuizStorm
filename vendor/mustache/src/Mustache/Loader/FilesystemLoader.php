@@ -14,14 +14,14 @@
  *
  * A FilesystemLoader instance loads Mustache Template source from the filesystem by name:
  *
- *     $loader = new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/views');
- *     $tpl = $loader->load('foo'); // equivalent to `file_get_contents(dirname(__FILE__).'/views/foo.mustache');
+ *     $loader = new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/view');
+ *     $tpl = $loader->load('foo'); // equivalent to `file_get_contents(dirname(__FILE__).'/view/foo.mustache');
  *
  * This is probably the most useful Mustache Loader implementation. It can be used for partials and normal Templates:
  *
  *     $m = new Mustache(array(
- *          'loader'          => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/views'),
- *          'partials_loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/views/partials'),
+ *          'loader'          => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/view'),
+ *          'partials_loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/view/partials'),
  *     ));
  */
 class Mustache_Loader_FilesystemLoader implements Mustache_Loader
@@ -69,8 +69,8 @@ class Mustache_Loader_FilesystemLoader implements Mustache_Loader
     /**
      * Load a Template by name.
      *
-     *     $loader = new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/views');
-     *     $loader->load('admin/dashboard'); // loads "./views/admin/dashboard.mustache";
+     *     $loader = new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/view');
+     *     $loader->load('admin/dashboard'); // loads "./view/admin/dashboard.mustache";
      *
      * @param string $name
      *

@@ -6,6 +6,7 @@ class Router
     private $defaultMethod;
     private $configuration;
 
+
     public function __construct($configuration, $defaultController, $defaultMethod)
     {
         $this->defaultController = $defaultController;

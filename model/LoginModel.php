@@ -37,5 +37,15 @@ class LoginModel
         }
     }
 
+    //Obtener el nombre del jugador
+    public function getNombreJugadorByEmail($email)
+    {
+        $sql = "SELECT nombre FROM usuario WHERE email = :email";
+        $query = $this->database->prepare($sql);
+        $query->bindParam(':email', $email);
+        $query->execute();
+
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>
