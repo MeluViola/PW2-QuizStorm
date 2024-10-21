@@ -4,11 +4,14 @@ use PHPMailer\PHPMailer\Exception;
 
 class RegisterController{
 
-    private $model;
+    private $registerModel;
+    private $presenter;
 
-    public function __construct($model)
+
+    public function __construct($registerModel, $presenter)
     {
-        $this->model = $model;
+        $this->registerModel = $registerModel;
+        $this->presenter = $presenter;
     }
 
     public function registrarse(){
@@ -37,7 +40,7 @@ class RegisterController{
 
         $estado_cuenta = uniqid();
 
-        $result = $this ->model-> agregarUsuario($nombre_completo, $fecha_nacimiento, $sexo, $pais, $email, $contraseña, $nombre_usuario, $img, $estado_cuenta);
+        $result = $this ->registerModel-> agregarUsuario($nombre_completo, $fecha_nacimiento, $sexo, $pais, $email, $contraseña, $nombre_usuario, $img, $estado_cuenta);
 
         if(!$result) unlink("public/uploads/" . $img );
 

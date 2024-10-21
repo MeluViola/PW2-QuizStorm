@@ -8,6 +8,7 @@ include_once(__DIR__ . "/../helpers/Router.php");
 //Models
 include_once(__DIR__ . "/../model/LoginModel.php");
 include_once(__DIR__ . "/../model/RegisterModel.php");
+include_once(__DIR__ . "/../model/HomeModel.php");
 
 //Controllers
 include_once(__DIR__ . "/../controller/LoginController.php");
@@ -42,24 +43,28 @@ class Configuration
 
     // Models
     private function getLoginModel(){
-        return new LoginModel($this->getDatabase());
+        return new LoginModel($this->getMysqldatabase());
     }
 
     private function getRegisterModel(){
-        return new RegisterModel($this->getDatabase());
+        return new RegisterModel($this->getMysqldatabase());
+    }
+
+    private function getHomeModel() {
+        return new HomeModel($this->getMysqldatabase());
     }
 
     // Helpers
-    private function getDatabase()
+    private function getMysqldatabase()
     {
         $config = parse_ini_file("config.ini");
-        $database = new Database(
+        $Mysqldatabase = new Mysqldatabase(
             $config["host"],
-            $config["user"],
+            $config["username"],
             $config["password"],
             $config["database"]
         );
-        return $database;
+        return $Mysqldatabase;
     }
 
     private function getPresenter()

@@ -2,19 +2,23 @@
 
 class LoginController
 {
-    private $model;
+    private $LoginModel;
+    private $presenter;
 
-    public function __construct($model)
+
+    public function __construct($LoginModel, $presenter)
     {
-        $this->model = $model;
+        $this->LoginModel = $LoginModel;
+        $this->presenter = $presenter;
     }
+
 
     public function signIn()
     {
         $email = $_POST["email"];
         $contraseña = $_POST["contraseña"];
 
-        $result = $this->model->signIn($email, $contraseña);
+        $result = $this->LoginModel->signIn($email, $contraseña);
         if (count($result) > 0) {
             session_start();
             $_SESSION['id_usuario'] = $result[0]['id_usuario'];
@@ -42,7 +46,7 @@ class LoginController
             header('Location:/error?codError=333');
             exit();
         } else {
-            $usuarioVerificado = $this->model->verificarUsuario($estado_cuenta, $email);
+            $usuarioVerificado = $this->LoginModel->verificarUsuario($estado_cuenta, $email);
             if ($usuarioVerificado) {
 
                 header('Location: /login?EXITO=1');;
