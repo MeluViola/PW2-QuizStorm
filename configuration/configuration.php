@@ -35,7 +35,7 @@ class Configuration
     }
 
     public function getRegisterController() {
-        return new RegistrerController($this->getRegisterModel(), $this->getPresenter());
+        return new RegisterController($this->getRegisterModel(), $this->getPresenter());
     }
 
     public function getHomeController(){
