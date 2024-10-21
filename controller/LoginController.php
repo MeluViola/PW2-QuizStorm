@@ -12,7 +12,6 @@ class LoginController
         $this->presenter = $presenter;
     }
 
-
     public function signIn()
     {
         $email = $_POST["email"];
@@ -56,6 +55,19 @@ class LoginController
         }
     }
 
+    public function list()
+    {
+        $data = [
+            'formTitle' => 'Iniciar sesión',
+            'formAction' => '/TP-Final-QuizStorm/login/signIn',
+            'submitButtonText' => 'Ingresar',
+            "mensaje" => $_SESSION["success"] ?? null,
+            "error" => $_SESSION["error"] ?? null,
+        ];
+        unset($_SESSION["error"]);
+        $this->presenter->show("login", $data);
+    }
+    
     //para que el perfil tenga el nombre de cada usuario (por ahora)
     public function obtenerPerfilUsuario()
     {
@@ -65,5 +77,6 @@ class LoginController
         }
         return null;
     }
+
 }
 

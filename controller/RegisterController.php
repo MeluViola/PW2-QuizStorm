@@ -88,6 +88,10 @@ class RegisterController{
 
     }
 
+    public function list (){
+        $this->presenter->show("register", []);
+
+    }
 }
 
 

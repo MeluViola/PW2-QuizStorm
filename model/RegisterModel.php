@@ -6,7 +6,7 @@ class RegisterModel
 
     public function __construct($database)
     {
-        $this->database = database;
+        $this->database = $database;
     }
 
     public function agregarUsuario($nombre_completo, $fecha_nacimiento, $sexo, $pais, $email, $contraseña, $nombre_usuario, $foto_perfil, $estado_cuenta)
