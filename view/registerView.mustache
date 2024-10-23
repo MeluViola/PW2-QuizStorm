@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - QuizStorm</title>
+    <link rel="stylesheet" href="/TP-Final-QuizStorm/public/registro.css"> <!-- Enlace al CSS actualizado -->
+</head>
+<body>
+
+<header>
+    <h1>Bienvenido a QuizStorm</h1>
+</header>
+
+<div class="container">
+    <button class="back-button" onclick="window.history.back();">&#8592;</button> <!-- Botón de "Atrás" -->
+    <h2>Regístrate para comenzar</h2>
+
+    <form action="/register/registrarse" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nombre_completo">Nombre Completo:</label>
+            <input type="text" id="nombre_completo" name="nombre_completo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fecha_nacimiento">Año de Nacimiento:</label>
+            <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nombre_usuario">Nombre de Usuario:</label>
+            <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" required>
+        </div>
+
+        <div class="form-group">
+            <label for="repetir-contraseña">Repetir Contraseña:</label>
+            <input type="password" id="repetir-contraseña" name="repetir-contraseña" required>
+        </div>
+
+        <div class="form-group">
+            <label for="foto_perfil">Foto de Perfil:</label>
+            <input type="file" id="foto_perfil" name="foto_perfil" accept="image/*">
+        </div>
+
+        <input type="submit" value="Registrarse">
+    </form>
+
+    {{#error}}
+        <div class="error-message">
+            <p>Error: {{errorMessage}}</p>
+        </div>
+    {{/error}}
+</div>
+
+<footer>
+    <p>© 2024 QuizStorm. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

@@ -23,8 +23,6 @@ include_once(__DIR__ . '/../vendor/mustache/src/Mustache/Autoloader.php');
 
 class Configuration
 {
-    private $configFile = 'config/config.ini';
-
     public function __construct() {
     }
 
