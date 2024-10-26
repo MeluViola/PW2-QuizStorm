@@ -77,7 +77,7 @@ class Configuration
     private function getMysqldatabase()
     {
         $config = parse_ini_file("config.ini");
-        $Mysqldatabase = new Mysqldatabase(
+        $Mysqldatabase = new MySqlDatabase(
             $config["host"],
             $config["username"],
             $config["password"],

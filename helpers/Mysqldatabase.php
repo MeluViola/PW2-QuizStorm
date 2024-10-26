@@ -1,6 +1,6 @@
 <?php
 
-class Mysqldatabase
+class MySqlDatabase
 {
     private $connection;
     public function __construct($host, $username, $password, $database)
@@ -14,6 +14,10 @@ class Mysqldatabase
     public function query($sql){
         $result = mysqli_query($this -> connection, $sql);
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+
+    public function execute($sql) {
+        mysqli_query($this->connection, $sql);
     }
 
     public function __destruct(){
