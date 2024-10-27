@@ -1,5 +1,4 @@
 <?php
-
 class RegisterModel
 {
     private $database;
@@ -12,7 +11,7 @@ class RegisterModel
     public function agregarUsuario($nombre_completo, $fecha_nacimiento, $sexo, $pais, $email, $contraseña, $nombre_usuario, $foto_perfil, $estado_cuenta)
     {
         $sql = "INSERT INTO usuario (nombre_completo, fecha_nacimiento, sexo, pais, email, contraseña, nombre_usuario, foto_perfil, estado_cuenta) 
-            VALUES ('$nombre_completo', '$fecha_nacimiento', '$sexo', '$pais', '$email', '$contraseña', '$nombre_usuario', '$foto_perfil', '$estado_cuenta')";
+                VALUES ('$nombre_completo','$fecha_nacimiento','$sexo', '$pais', '$email', '$contraseña', '$nombre_usuario', '$foto_perfil', '$estado_cuenta')";
 
         $this->database->execute($sql);
 
