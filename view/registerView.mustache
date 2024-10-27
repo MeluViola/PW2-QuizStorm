@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - QuizStorm</title>
-    <link rel="stylesheet" href="TP-Final-QuizStorm/public/registro.css"> <!-- Enlace al CSS actualizado -->
+    <link rel="stylesheet" href="/TP-Final-QuizStorm/public/registro.css"> <!-- Enlace al CSS actualizado -->
 </head>
 <body>
 
 <header>
     <h1>Bienvenido a QuizStorm</h1>
-    <p>Registro de usuario</p>
 </header>
 
 <div class="container">
     <button class="back-button" onclick="window.history.back();">&#8592;</button> <!-- Botón de "Atrás" -->
     <h2>Regístrate para comenzar</h2>
 
-    <form action="/register/registrarse" method="POST" enctype="multipart/form-data">
+    <form action="/TP-Final-QuizStorm/register/registrarse" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="nombre_completo">Nombre Completo:</label>
             <input type="text" id="nombre_completo" name="nombre_completo" required>
         </div>
 
         <div class="form-group">
-            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            <label for="fecha_nacimiento">Año de Nacimiento:</label>
+            <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" required>
         </div>
 
         <div class="form-group">
@@ -78,7 +77,7 @@
 </div>
 
 <footer>
-    <p>© 2023 QuizStorm. Todos los derechos reservados.</p>
+    <p>© 2024 QuizStorm. Todos los derechos reservados.</p>
 </footer>
 
 </body>

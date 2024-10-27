@@ -22,11 +22,11 @@ class RegisterController{
         $pais = $_POST['pais'];
         $email = $_POST['email'];
         $contraseña = $_POST['contraseña'];
-        $rcontraseña = $_POST['repetir-contraseña'];
+        $contraseña_repetida = $_POST['repetir-contraseña'];
         $nombre_usuario = $_POST['nombre_usuario'];
         $img = "";
 
-        if($contraseña!=$rcontraseña){
+        if($contraseña!=$contraseña_repetida){
             header("location:/");
             exit();
         }
@@ -39,13 +39,13 @@ class RegisterController{
             $img="$nuevoNombre.$extension";
         }
 
-        $estado_cuenta = uniqid();
+        $token = uniqid();
 
-        $result = $this ->registerModel-> agregarUsuario($nombre_completo, $fecha_nacimiento, $sexo, $pais, $email, $contraseña, $nombre_usuario, $img, $estado_cuenta);
+        $result = $this ->registerModel-> agregarUsuario($nombre_completo, $fecha_nacimiento, $sexo, $pais, $email, $contraseña, $nombre_usuario, $img, $token);
 
         if(!$result) unlink("public/uploads/" . $img );
 
-        if ($this->enviarMailDeValidacion($email, $nombre_completo, $estado_cuenta)) {
+        if ($this->enviarMailDeValidacion($email, $nombre_completo, $token)) {
             echo 'Se envió un correo de verificación.';
         } else {
             echo 'ERROR.';
@@ -57,7 +57,7 @@ class RegisterController{
         exit();
     }
 
-    public function enviarMailDeValidacion($email, $nombre, $estado_cuenta)
+    public function enviarMailDeValidacion($email, $nombre, $token)
     {
         $mail = new PHPMailer(true);
         try {
@@ -74,7 +74,7 @@ class RegisterController{
             $mail->addAddress($email, $nombre);
 
             //enlace para la validacion
-            $enlaceValidacion = 'http://localhost/login/verificarUsuario?estado_cuenta=' . $estado_cuenta . '&email=' . $email;
+            $enlaceValidacion = 'http://localhost/login/verificarUsuario?token=' . $token . '&email=' . $email;
 
             // Contenido del correo
             $mail->isHTML(true);
