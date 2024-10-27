@@ -13,7 +13,6 @@
 </header>
 
 <div class="container">
-    <button class="back-button" onclick="window.history.back();">&#8592;</button> <!-- Botón de "Atrás" -->
     <h2>Regístrate para comenzar</h2>
 
     <form action="/TP-Final-QuizStorm/register/registrarse" method="POST" enctype="multipart/form-data">
@@ -65,8 +64,12 @@
             <label for="foto_perfil">Foto de Perfil:</label>
             <input type="file" id="foto_perfil" name="foto_perfil" accept="image/*">
         </div>
+        <br>
+        <button type="submit">Registrarse</button>
 
-        <input type="submit" value="Registrarse">
+        <button onclick="window.history.back();">Volver</button> <!-- Botón de "Atrás" -->
+
+
     </form>
 
     {{#error}}
