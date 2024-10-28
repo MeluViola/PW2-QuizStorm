@@ -329,10 +329,11 @@ CREATE TABLE `usuario` (
   `fecha_registro` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `ultima_conexion` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `intentos_fallidos_login` int DEFAULT '0',
+  `token` varchar(13) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `nombre_usuario` (`nombre_usuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -341,7 +342,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Juan Pérez','juanp_editor','juanperez@example.com','ContraseñaEncriptada','ruta/a/foto.jpg','1990-05-15','Masculino','Argentina',0,1,'editor','activo','2024-10-17 03:59:51','2024-10-17 03:59:51',0),(2,'Laura Lopez','Lau_admin','lauperez@example.com','ContraseñaEncriptada','ruta/a/foto.jpg','1995-07-12','Femenino','Argentina',0,1,'administrador','activo','2024-10-17 04:06:58','2024-10-17 04:06:58',0);
+INSERT INTO `usuario` VALUES (1,'Juan Pérez','juanp_editor','juanperez@example.com','ContraseñaEncriptada','ruta/a/foto.jpg','1990-05-15','Masculino','Argentina',0,1,'editor','activo','2024-10-17 03:59:51','2024-10-17 03:59:51',0,NULL),(2,'Laura Lopez','Lau_admin','lauperez@example.com','ContraseñaEncriptada','ruta/a/foto.jpg','1995-07-12','Femenino','Argentina',0,1,'administrador','activo','2024-10-17 04:06:58','2024-10-17 04:06:58',0,NULL),(3,'Lautaro Gomez','Lauti903','lautagomez@example.com','ContraseñaEncriptada','ruta/a/foto.jpg','1995-07-12','Masculino','Argentina',0,1,'jugador','activo','2024-10-21 14:47:12','2024-10-21 14:47:12',0,NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -426,4 +427,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-17 11:07:43
+-- Dump completed on 2024-10-27 15:28:46

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    width: 80%;
+    height: 140%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cccccc;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.user-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px;
+    min-height: 90vh; /* Ocupa al menos el 100% de la altura de la pantalla */
+    box-sizing: border-box; /* Incluye el padding dentro del tamaño total */   
+}
+
+.partidas-jugadas, .jugador-info, .ranking-global {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.partidas-jugadas h2, .jugador-info h2, .ranking-global h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.partidas-jugadas ul, .ranking-global ul {
+    list-style: none;
+}
+
+.partidas-jugadas ul li, .ranking-global ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.partidas-jugadas ul li.win {
+    color: green;
+}
+
+.partidas-jugadas ul li.lose {
+    color: red;
+}
+
+button {
+    background-color: #666666;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #333333;
+}
+
+.jugador-info {
+    text-align: center;
+}
+
+.jugador-info h2 span {
+    display: block;
+    font-size: 1.2em;
+    margin-top: 5px;
+    color: gray;
+}
+
+.ranking-global ul li span {
+    font-weight: bold;
+    color: black;
+}
+
+.ver-todas {
+    background-color: #666666;
+    color: white;
+}
+
+.button-container {
+    justify-content: flex-end;
+    margin-top: 0px;
+}
+
+.button-container-pregunta {
+    justify-content: flex-end;
+    margin-top: auto;
+    
+}
+
+.jugador-info button {
+    background-color: #666666;
+    padding: 20px 40px; /* Botones más grandes */
+    font-size: 1.2em;   /* Texto más grande */
+    width: 100%;
+    margin-top: 20px;   /* Mayor separación superior */
+    border-radius: 10px; /* Bordes más redondeados */
+}
+
+.jugador-info button:hover {
+    background-color: #333333;
+}

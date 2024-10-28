@@ -3,6 +3,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require 'PHPMailer/Exception.php';
+
 class RegisterController{
 
     private $registerModel;
@@ -53,7 +57,7 @@ class RegisterController{
             exit();
         }
 
-        header("location:/login/form");
+        header("location:/login");
         exit();
     }
 
@@ -68,6 +72,7 @@ class RegisterController{
             $mail->Username = 'quizStorm.unlam@gmail.com';
             $mail->Password = '123456';
             $mail->Port = 587;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
             // Configuración del remitente y destinatario
             $mail->setFrom('quizStorm.unlam@gmail.com', 'QuizStorm');

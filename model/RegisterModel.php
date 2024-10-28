@@ -8,10 +8,10 @@ class RegisterModel
         $this->database = $database;
     }
 
-    public function agregarUsuario($nombre_completo, $fecha_nacimiento, $sexo, $pais, $email, $contraseña, $nombre_usuario, $foto_perfil, $estado_cuenta)
+    public function agregarUsuario($nombre_completo, $fecha_nacimiento, $sexo, $pais, $email, $contraseña, $nombre_usuario, $foto_perfil)
     {
-        $sql = "INSERT INTO usuario (nombre_completo, fecha_nacimiento, sexo, pais, email, contraseña, nombre_usuario, foto_perfil, estado_cuenta) 
-                VALUES ('$nombre_completo','$fecha_nacimiento','$sexo', '$pais', '$email', '$contraseña', '$nombre_usuario', '$foto_perfil', '$estado_cuenta')";
+        $sql = "INSERT INTO usuario (nombre_completo, fecha_nacimiento, sexo, pais, email, contraseña, nombre_usuario, foto_perfil) 
+                VALUES ('$nombre_completo','$fecha_nacimiento','$sexo', '$pais', '$email', '$contraseña', '$nombre_usuario', '$foto_perfil')";
 
         $this->database->execute($sql);
 
