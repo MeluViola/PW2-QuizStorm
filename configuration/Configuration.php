@@ -11,6 +11,7 @@ include_once(__DIR__ . "/../controller/RegisterController.php");
 include_once(__DIR__ . "/../controller/HomeController.php");
 include_once( __DIR__ . "/../controller/UserController.php");
 include_once(__DIR__ . "/../controller/GameController.php");
+include_once(__DIR__ . "/../controller/LobbyController.php");
 
 //Models
 include_once(__DIR__ . "/../model/LoginModel.php");
@@ -18,6 +19,7 @@ include_once(__DIR__ . "/../model/RegisterModel.php");
 include_once(__DIR__ . "/../model/HomeModel.php");
 include_once(__DIR__ . "/../model/UserModel.php");
 include_once(__DIR__ . "/../model/GameModel.php");
+include_once(__DIR__ . "/../model/LobbyModel.php");
 
 //Vendor
 include_once(__DIR__ . '/../vendor/mustache/src/Mustache/Autoloader.php');
@@ -50,6 +52,10 @@ class Configuration
         return new GameController($this->getGameModel(), $this->getPresenter());
     }
 
+    public function getLobbyController(){
+        return new LobbyController($this->getLobbyModel(), $this->getPresenter());
+    }
+
     // Models
     private function getLoginModel(){
         return new LoginModel($this->getMysqldatabase());
@@ -72,6 +78,9 @@ class Configuration
         return new GameModel($this->getMysqldatabase());
     }
 
+    private function getLobbyModel() {
+        return new LobbyModel($this->getMysqldatabase());
+    }
 
     // Helpers
     private function getMysqldatabase()

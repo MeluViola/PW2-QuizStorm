@@ -3,22 +3,26 @@
 class GameController
 {
 
-    private $model;
+    private $GameModel;
     private $presenter;
 
-    public function __construct($model, $presenter)
+    public function __construct($GameModel, $presenter)
     {
-        $this->model = $model;
+        $this->GameModel = $GameModel;
         $this->presenter = $presenter;
     }
 
     public function nuevaPartida()
     {
         if (!isset($_SESSION['email'])) {
-            header("location: /");
+            header("location:/");
             exit();
         }
 
-        $this->model->crearPartida($_SESSION['id_usuario']['nombre_usuario']);
+        $this->GameModel->crearPartida($_SESSION['id_usuario']['nombre_usuario']);
+    }
+    public function list (){
+        $this->presenter->show("game", []);
+
     }
 }
