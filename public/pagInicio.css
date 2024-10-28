@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
     margin: 0;
@@ -13,28 +13,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    image-rendering: pixelated;
 }
 
 .container {
     text-align: center;
+    image-rendering: pixelated;
 }
 
-.header{
-    transform: translate(30%, -50%);
+.header {
     position: absolute;
-    /*margin-top: 10em;*/
+    top: 60px; /* Ajusta esta distancia desde la parte superior */
+    left: 51%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centrado horizontal */
+    text-align: center;
 }
 
 .header h1 {
-    font-size: 6em;
+    font-size: 5em;
     font-weight: bold;
     color: black;
-    font-family: "Yeseva One", serif;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: "Press Start 2P", sans-serif;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.7);
+    margin: 0;
 }
+
+
 
 .cloud img {
     width: 800px;
+    image-rendering: pixelated;
 }
 
 .icons {
@@ -42,35 +50,41 @@ body {
     justify-content: center;
     margin-bottom: 30px;
     gap: 10px;
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea */
-    justify-content: space-between; /* Espaciado entre columnas */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    image-rendering: pixelated;
 }
 
 .icons img {
-    width: 70px; /* Dos imágenes por fila con margen */
-    margin-bottom: 10px; /* Espacio entre filas */
+    width: 80px;
+    margin-bottom: 10px;
 }
 
-.teatro{
+.teatro {
     transform: translate(100%, -90%);
 }
-.juego{
+
+.juego {
     transform: translate(50%, 40%);
 }
-.comida{
+
+.comida {
     transform: translate(50%, -100%);
 }
-.deporte{
+
+.deporte {
     transform: translate(0%, 140%);
 }
-.ciencia{
+
+.ciencia {
     transform: translate(-50%, -120%);
 }
-.cine{
+
+.cine {
     transform: translate(-45%, 80%);
 }
-.libro{
+
+.libro {
     transform: translate(-100%, -90%);
 }
 
@@ -78,24 +92,25 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    position: absolute; /* O relative, según el contexto */
+    position: absolute;
     transform: translate(85%, -80%);
+    image-rendering: pixelated;
 }
 
 button {
     background-color: #8c8c8c;
     color: white;
-    border: none;
+    border: 3px solid black;
     padding: 10px 30px;
-    font-size: 1.5em;
-    border-radius: 10px;
-    cursor: pointer;
+    font-size: 1.2em;
+    font-family: "Press Start 2P", sans-serif;
     width: 300px;
     height: 75px;
-    align-self: center;
+    cursor: pointer;
+    image-rendering: pixelated;
+    box-shadow: 3px 3px 0 black; /* Sombra de 8 bits */
 }
 
 button:hover {
     background-color: #6d6d6d;
 }
-
