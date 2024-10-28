@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,67 +7,77 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #4a90e2, #003d73); /* Fondo azul con degradado */
+    background-color: #4a90e2; /* Fondo azul sólido */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    image-rendering: pixelated;
 }
 
-header {
-    background-color: #444; /* Color más claro para el header */
+header, footer {
+    background-color: #333; /* Color oscuro para header y footer */
     color: white;
     text-align: center;
-    padding: 8px 0; /* Reducir el padding */
+    padding: 8px 0;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 1em;
 }
 
-footer {
-    background-color: #444; /* Color más claro para el footer */
-    color: white;
-    text-align: center;
-    padding: 8px 0; /* Reducir el padding */
-    margin-top: auto;
+header{
+    margin: 12px 0;
+    font-size: 1.2em;
 }
 
-h1 {
-    font-size: 2em; /* Tamaño del título más pequeño */
+input, select{
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+#foto_perfil{
+    font-family: 'Press Start 2P', sans-serif;
+
 }
 
 h2 {
-    font-size: 1.4em; /* Tamaño del subtítulo más pequeño */
+    font-size: 1.2em;
+    font-family: 'Press Start 2P', sans-serif;
+    color: black;
+    margin-bottom: 10px;
 }
 
 .container {
     background-color: white;
-    padding: 15px; /* Reducir padding */
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Ancho máximo */
-    width: 90%; /* Ancho adaptable */
-    margin: 20px auto; /* Centramos el contenedor */
-    overflow-y: auto; /* Permitir el desplazamiento solo en caso necesario */
+    padding: 15px;
+    border: 3px solid black; /* Borde sólido negro */
+    box-shadow: none; /* Sin sombras */
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
+    overflow-y: auto;
+    image-rendering: pixelated;
 }
 
 .back-button {
-    position: absolute; /* Posicionar en la esquina superior izquierda */
-    top: 10px; /* Ajustar posición */
-    left: 10px; /* Ajustar posición */
-    background: transparent; /* Fondo transparente */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
-    font-size: 1.2em; /* Tamaño de la flecha más pequeño */
-    color: #333; /* Color de la flecha */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
 form {
     display: flex;
-    flex-direction: column; /* Alinear en columna */
-    gap: 10px; /* Reducir espaciado entre elementos del formulario */
+    flex-direction: column;
+    gap: 10px;
 }
 
 label {
-    font-size: 0.9em; /* Tamaño del texto más pequeño */
+    font-size: 0.8em;
     color: #333;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
 input[type="text"],
@@ -74,43 +86,45 @@ input[type="email"],
 input[type="password"],
 input[type="file"],
 select {
-    padding: 8px; /* Reducir tamaño de los campos */
-    font-size: 0.8em; /* Tamaño del texto más pequeño */
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 8px;
+    font-size: 0.8em;
+    border: 2px solid black; /* Borde sólido */
+    background-color: #e0e0e0; /* Fondo sólido */
+    color: black;
     width: 100%;
+    image-rendering: pixelated;
 }
 
-input[type="submit"] {
+button {
     background-color: #5c5c8a;
     color: white;
-    border: none;
-    padding: 8px; /* Reducir padding */
-    font-size: 0.9em; /* Tamaño del texto más pequeño */
-    border-radius: 5px;
+    border: 2px solid black;
+    padding: 8px;
+    font-size: 0.9em;
+    font-family: 'Press Start 2P', sans-serif;
     cursor: pointer;
     width: 100%;
-    margin-top: 10px; /* Reducir el margen superior */
     transition: background-color 0.3s;
+    margin-bottom: 10px;
 }
 
-input[type="submit"]:hover {
+button:hover {
     background-color: #3d3d5c;
 }
 
 /* Ajustes responsivos */
 @media (max-width: 600px) {
     .container {
-        width: 95%; /* Ancho del contenedor en móviles */
-        padding: 10px; /* Reducir el padding */
+        width: 95%;
+        padding: 10px;
     }
 
     h1 {
-        font-size: 1.8em; /* Tamaño del título más pequeño en móviles */
+        font-size: 1.5em;
     }
 
     h2 {
-        font-size: 1.4em; /* Tamaño del subtítulo más pequeño en móviles */
+        font-size: 1.2em;
     }
 
     input[type="text"],
@@ -118,10 +132,10 @@ input[type="submit"]:hover {
     input[type="email"],
     input[type="password"],
     select {
-        font-size: 0.7em; /* Tamaño de texto más pequeño en móviles */
+        font-size: 0.7em;
     }
 
     input[type="submit"] {
-        font-size: 0.8em; /* Tamaño de texto más pequeño en móviles */
+        font-size: 0.8em;
     }
 }
