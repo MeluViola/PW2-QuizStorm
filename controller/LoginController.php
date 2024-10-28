@@ -22,7 +22,7 @@ class LoginController
             session_start();
             $_SESSION['id_usuario'] = $result[0]['id_usuario'];
             $_SESSION['id_partida'] = null;
-            header("location:/lobby"); //NO LO ENVIA TODAVIA
+            header("location:/TP-Final-QuizStorm/lobby"); //NO LO ENVIA TODAVIA
         } else header("location:/register"); //tendria que ir a registrarse
         exit();
     }

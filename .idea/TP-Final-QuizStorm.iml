@@ -7,6 +7,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/mustache/mustache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mustache/src" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mustache/test" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/PHPMailer-master/language" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/PHPMailer-master/src" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
