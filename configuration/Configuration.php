@@ -10,7 +10,7 @@ include_once(__DIR__ . "/../controller/LoginController.php");
 include_once(__DIR__ . "/../controller/RegisterController.php");
 include_once(__DIR__ . "/../controller/HomeController.php");
 include_once( __DIR__ . "/../controller/UserController.php");
-include_once(__DIR__ . "/../controller/GameController.php");
+include_once(__DIR__ . "/../controller/JugarPartidaController.php");
 include_once(__DIR__ . "/../controller/LobbyController.php");
 
 //Models
@@ -18,7 +18,7 @@ include_once(__DIR__ . "/../model/LoginModel.php");
 include_once(__DIR__ . "/../model/RegisterModel.php");
 include_once(__DIR__ . "/../model/HomeModel.php");
 include_once(__DIR__ . "/../model/UserModel.php");
-include_once(__DIR__ . "/../model/GameModel.php");
+include_once(__DIR__ . "/../model/JugarPartidaModel.php");
 include_once(__DIR__ . "/../model/LobbyModel.php");
 
 //Vendor
@@ -48,8 +48,8 @@ class Configuration
         return new UserController($this->getUserModel(), $this->getPresenter());
     }
 
-    public function getGameController(){
-        return new GameController($this->getGameModel(), $this->getPresenter());
+    public function getJugarPartidaController(){
+        return new JugarPartidaController($this->getJugarPartidaModel(), $this->getPresenter());
     }
 
     public function getLobbyController(){
@@ -74,8 +74,8 @@ class Configuration
         return new UserModel($this->getMysqldatabase());
     }
 
-    private function getGameModel() {
-        return new GameModel($this->getMysqldatabase());
+    private function getJugarPartidaModel() {
+        return new JugarPartidaModel($this->getMysqldatabase());
     }
 
     private function getLobbyModel() {

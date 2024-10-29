@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizStorm - Jugar Partida</title>
+    <link rel="stylesheet" href="/TP-Final-QuizStorm/public/partida.css">
+    <style>
+
+        .question-header {
+            border-bottom: 2px solid {{color_categoria}};
+            color: {{color_categoria}};
+        }
+        .question-content {
+            color: {{color_categoria}};
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    {{#pregunta}}
+        <div style="border: 2px solid {{color_categoria}}; padding: 10px;">
+            <h2 class="question-header">Pregunta de {{nombre_categoria}}</h2>
+            <p class="question-content">{{contenido}}</p>
+
+            <!-- Opciones de respuesta -->
+            <form method="post" action="/procesarRespuesta">
+                <label>
+                    <input type="radio" name="respuesta_usuario" value="A" required> A. {{opcion_A}}
+                </label><br>
+                <label>
+                    <input type="radio" name="respuesta_usuario" value="B"> B. {{opcion_B}}
+                </label><br>
+                <label>
+                    <input type="radio" name="respuesta_usuario" value="C"> C. {{opcion_C}}
+                </label><br>
+                <label>
+                    <input type="radio" name="respuesta_usuario" value="D"> D. {{opcion_D}}
+                </label><br>
+
+                <input type="hidden" name="id_pregunta" value="{{id_pregunta}}">
+                <button type="submit" class="answer-button">Responder</button>
+            </form>
+
+            <!-- Botón para reportar pregunta inválida -->
+            <form method="post" action="/reportarPregunta">
+                <input type="hidden" name="id_pregunta" value="{{id_pregunta}}">
+                <button type="submit" class="report-button">Reportar pregunta</button>
+            </form>
+        </div>
+        <p>Puntaje actual: {{puntos}}</p>
+    {{/pregunta}}
+
+    {{#puntos_finales}}
+        <h2>Juego terminado</h2>
+        <p>{{mensaje}}</p>
+        <p>Puntaje final: {{puntos_finales}}</p>
+        <a href="/lobby">Regresar al lobby</a>
+    {{/puntos_finales}}
+</div>
+</body>
+</html>
+
+
+
+

@@ -18,6 +18,7 @@ class Router
     {
         $controller = $this->getControllerFrom($controllerName);
         $this->executeMethodFromController($controller, $methodName);
+
     }
 
     private function getControllerFrom($module)
