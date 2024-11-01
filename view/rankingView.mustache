@@ -1,0 +1,20 @@
+<h2>Ranking</h2>
+
+<table>
+    <thead class="table-secondary">
+    <tr>
+        <th>Ranking</th>
+        <th>Usuario</th>
+        <th>Puntuación acumulada</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#ranking}}
+        <tr>
+            <td><p>{{i}}</p></td> <!-- Índice de posición en el ranking -->
+            <td><p>{{userName}}</p></td> <!-- Nombre de usuario -->
+            <td><p>{{puntos_acumulados}}</p></td> <!-- Puntos acumulados -->
+        </tr>
+    {{/ranking}}
+    </tbody>
+</table>
