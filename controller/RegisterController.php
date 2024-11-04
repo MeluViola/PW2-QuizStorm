@@ -1,11 +1,12 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
-require 'PHPMailer/Exception.php';
+require 'vendor/PHPMailer-master/src/PHPMailer.php';
+require 'vendor/PHPMailer-master/src/SMTP.php';
+require 'vendor/PHPMailer-master/src/Exception.php';
 
 class RegisterController{
 
@@ -69,13 +70,13 @@ class RegisterController{
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'quizStorm.unlam@gmail.com';
-            $mail->Password = '123456';
+            $mail->Username = 'quizstormunlam@gmail.com';
+            $mail->Password = 'preguntados1';
             $mail->Port = 587;
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
             // Configuración del remitente y destinatario
-            $mail->setFrom('quizStorm.unlam@gmail.com', 'QuizStorm');
+            $mail->setFrom('quizstormunlam@gmail.com', 'QuizStorm');
             $mail->addAddress($email, $nombre);
 
             //enlace para la validacion
@@ -88,7 +89,8 @@ class RegisterController{
             $mail->send();
 
         } catch (Exception $e) {
-            header('Location:/autenticacion?mail=BAD');
+            echo "Error al enviar el correo: {$mail->ErrorInfo}";
+            //header('Location:/autenticacion?mail=BAD');
             exit();
         }
 
