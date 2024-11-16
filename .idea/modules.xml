@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TP Integrador (nombre juego).iml" filepath="$PROJECT_DIR$/.idea/TP Integrador (nombre juego).iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tp-final.iml" filepath="$PROJECT_DIR$/.idea/tp-final.iml" />
     </modules>
   </component>
 </project>

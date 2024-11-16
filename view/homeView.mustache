@@ -1,37 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    <link rel="stylesheet" href="/TP-Final-QuizStorm/public/pagInicio.css">
-</head>
-<body>
-<div class="container">
-    <div class="header">
-        <h1>QuizStorm</h1>
-    </div>
-    <div class="cloud">
-        <img src="public/images/Nube.png" alt="Nube de tormenta">
-    </div>
-    <div class="icons">
-        <img src="public/images/teatro.png" alt="Teatro" class="teatro">
-        <img src="public/images/joystick.png" alt="Videojuegos" class="juego">
-        <img src="public/images/burger.png" alt="Comida" class="comida">
-        <img src="public/images/pelota.png" alt="Deporte" class="deporte">
-        <img src="public/images/ciencia.png" alt="Ciencia" class="ciencia">
-        <img src="public/images/pop.png" alt="Cine" class="cine">
-        <img src="public/images/libro.png" alt="Libros" class="libro">
-    </div>
-    <div class="buttons">
-        <button onclick="window.location.href='/TP-Final-QuizStorm/login'">INICIAR SESIÓN</button>
-        <button onclick="window.location.href='/TP-Final-QuizStorm/register'">REGISTRARME</button>
-        <button onclick="window.location.href='/TP-Final-QuizStorm/lobby'">IR AL LOBBY</button> <!--PRUEBA PARA VER EL LOBBY-->
-        <button onclick="window.location.href='/TP-Final-QuizStorm/jugarPartida'">PARTIDA</button> <!--PRUEBA PARA VER LA PARTIDA-->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
+
+
+<div class="container" style="background-color: #031b7140; height: 500px">
+    <!-- Fila principal -->
+    <div class="row">
+        <div class="col-12 text-center content">
+            <h1 style="color: #031b71; font-size: 42px;margin-top: 15px">Hola, {{username}}!</h1>
+            <p style="color: #031b71; display: inline; font-size: 35px">Tu puntaje máximo alcanzado en el ranking es de:
+                <span style="color: blueviolet;">{{maxScore}} puntos</span>
+            </p>
+        </div>
     </div>
+
+    <!-- Segunda fila para las tres columnas -->
+    <div class="row mt-5">
+        <!-- Columna de ranking -->
+        <div class="col d-flex flex-column align-items-center justify-content-center custom-column">
+            <a href="/Ranking/getRanking" id="cuadrorank">
+                <h2 style="margin: 0">Ranking</h2>
+                <i class="bi bi-bar-chart-line-fill bi-lg" id="ranking"></i> <!-- Icono grande -->
+            </a>
+        </div>
+
+        <!-- Columna de jugar partida -->
+        <div class="col d-flex flex-column align-items-center justify-content-center custom-column">
+            <a href="/Game/startGame" id="jugarPartida">
+                <h3 id="titlejp">Jugar Partida</h3>
+                <i class="bi bi-play-circle-fill bi-lg" id="play"></i>
+            </a>
+        </div>
+
+
+
+
+        <!-- Columna de partidas del usuario -->
+        <div class="col d-flex flex-column align-items-center justify-content-center custom-column">
+            <a href="/Partidas/getPartidas" id="misPartidas">
+                <h3 id="titlemp">Mis Partidas </h3>
+                <i class="bi bi-list bi-lg" id="mp"></i>
+            </a>
+
+        </div>
+    </div>
+
+
+    <a href="/Preguntas/getCrearPregunta" class="btn btn-secondary mt-3" id="crearPreguntaBoton">Crear Pregunta</a>
+
 </div>
-</body>
-</html>
+
+
+
+
+<!-- Scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 

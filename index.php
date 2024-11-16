@@ -1,11 +1,21 @@
 <?php
 session_start();
-include_once ('configuration/Configuration.php');
-$configuration = new Configuration();
-$router = $configuration->getRouter();
+include_once ("Configuration.php");
+$controllerName = isset($_GET["controller"]) ? $_GET["controller"] : "" ;
+$actionName = isset($_GET["action"]) ? $_GET["action"] : "" ;
 
-$action = isset($_GET['action']) ? $_GET['action'] : '';
-$page = isset($_GET['page']) ? $_GET['page'] : '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $controllerName = $_POST["controller"];
+    $actionName = $_POST["action"];
+}
 
-$router->route($page, $action);
+
+if (!isset($_SESSION['user']) && $controllerName != "Users") {
+    // Si el usuario no está logueado, redirige al controlador de inicio de sesión
+    $controllerName = "Users";
+    $actionName = "getLogin";
+}
+
+$router = Configuration::getRouter();
+$router->route($controllerName, $actionName);
 
