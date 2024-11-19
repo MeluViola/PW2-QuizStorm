@@ -22,7 +22,6 @@ body{
     text-decoration: none;
 }
 
-
 #contenedorLogin {
     position: absolute;
     width: 43%;
@@ -80,6 +79,7 @@ body{
     display: flex;
     align-items: center;
 }
+
 .navbar-center {
     flex: 0 0 auto;
     text-align: center;
@@ -87,6 +87,7 @@ body{
     width: 261px;
     height: 90px;
 }
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -95,6 +96,7 @@ body{
     height: 93px;
     padding: 0;
 }
+
 .navbar-section a {
     margin: 0 10px;
 }
@@ -181,8 +183,6 @@ body{
     color: aliceblue ;
 }
 
-
-
 .custom-column {
     max-width: 150px !important; /* Ancho máximo deseado para la columna */
     max-height: 150px !important;
@@ -209,7 +209,6 @@ a-href{
     text-align: center;
     color: rgb(234, 148, 255) ;
     text-decoration: none;
-
 }
 
 .row{
@@ -222,7 +221,6 @@ a-href{
     left: 47%;
     background-color: #5d246e;
     border: 3px solid #000000;
-
 }
 
 #crearPreguntaBoton:hover{
@@ -234,11 +232,13 @@ a-href{
  .d-flex.justify-content-between .pagination-button {
      flex-basis: 15%;
  }
+
 .d-flex.justify-content-between h2 {
     flex-grow: 1;
     text-align: center;
     margin-bottom: 0;
 }
+
 .pagination-button.text-right {
     text-align: right;
 }
@@ -255,5 +255,4 @@ a-href{
         margin: 0 auto;
         background-color: #258036; !important;
     }
-
 }
