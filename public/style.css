@@ -16,6 +16,10 @@ body{
     background-color: #5d246e !important;
 }
 
+.w3-container{
+    background-color: rgba(93, 36, 110, 0.8) !important;
+}
+
 #cerrarSesion:hover{
     background: #850d0d !important;
     color: white !important;
