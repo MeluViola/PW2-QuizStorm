@@ -8,6 +8,7 @@ require_once __DIR__ . '/../vendor/PHPMailer/src/Exception.php';
 require_once __DIR__ . '/../vendor/PHPMailer/src/PHPMailer.php';
 require_once __DIR__ . '/../vendor/PHPMailer/src/SMTP.php';
 class UsersModel
+    // La lógica del manejo de usuarios está acá = registro, inicio de sesión, validación de email, estadisticas, etc..
 {
     private $database;
 

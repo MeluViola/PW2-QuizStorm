@@ -1,6 +1,8 @@
 <?php
 
 class GameController
+    //gestiona el flujo del juego, incluyendo el inicio, la obtención
+    // y verificación de respuestas, el cálculo de puntos, y la finalización del juego.
 {
     private $presenter;
     private $preguntasModel;

@@ -1,6 +1,7 @@
 <?php
 
 class PartidasController
+    // se encarga de las partidas de los usuarios y permite reportar preguntas.
 {
 
     private $presenter;

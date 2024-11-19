@@ -1,6 +1,7 @@
 <?php
 
 class PreguntasController
+    // gestiona las operaciones relacionadas con las preguntas en general.
 {
     private $presenter;
     private $preguntasModel;

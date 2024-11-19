@@ -1,6 +1,7 @@
 <?php
 
 class RankingController
+    // maneja la visualización del ranking de usuarios en el sistema.
 {
 
     private $presenter;

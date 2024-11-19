@@ -1,6 +1,7 @@
 <?php
 
 class HomeController
+    //maneja la lógica para mostrar la página de inicio del sistema, adaptando la vista según el rol del usuario.
 {
 
     private $presenter;

@@ -1,6 +1,8 @@
 <?php
 
-class UsuarioPerfilController {
+class UsuarioPerfilController
+    // gestiona la lógica para mostrar el perfil, simple y sencillo.
+{
 
     private $usersModel;
     private $presenter;

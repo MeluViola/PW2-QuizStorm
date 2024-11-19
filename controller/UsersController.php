@@ -6,6 +6,8 @@ require 'vendor/PHPMailer/src/Exception.php';
 require 'vendor/PHPMailer/src/PHPMailer.php';
 require 'vendor/PHPMailer/src/SMTP.php';
 class UsersController
+    // Permite gestionar usuarios, autenticación, paneles de administración y
+    // exportación de datos a PDFs, además de generar los gráficos con JpGraph.
 {
 
     private $model;

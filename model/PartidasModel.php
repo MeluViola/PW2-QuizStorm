@@ -1,6 +1,7 @@
 <?php
 
 class PartidasModel
+    // acá está la lógica de las partidas; conecta con la bdd para manejar las partidas de cada usuario.
 {
     private $database;
 

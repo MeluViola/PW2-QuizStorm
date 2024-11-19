@@ -1,5 +1,6 @@
 <?php
 class PreguntasModel
+    // Acá va la lógica de las preguntas, se instancian y se sacan desde la bdd.
 {
     private $database;
 
