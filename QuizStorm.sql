@@ -223,6 +223,7 @@ CREATE TABLE `preguntas` (
 --
 
 INSERT INTO `preguntas` (`_id`, `texto`, `id_categoria`, `veces_jugada`, `veces_acertada`, `DIFICULTAD`, `id_estado`, `fecha_creacion`) VALUES
+(1, '¿Qué hace el tratamiento kinesico que dijo Anto?', 4, 10, 9, 90, 2, '2024-11-19'),
 (2, '¿Qué país ha ganado la mayor cantidad de Copas del Mundo de fútbol?', 1, 11, 6, 54.5455, 3, '2024-11-09'),
 (3, '¿Cuál es el continente más grande del mundo?', 2, 10, 9, 90, 3, '2024-11-09'),
 (4, '¿Cuál es la capital de Francia?', 2, 10, 9, 90, 2, '2024-11-09'),
