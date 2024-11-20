@@ -67,10 +67,12 @@
                 <div class="d-flex justify-content-center">
                     <br>
                     <a href="/lobby" class="btn btn-primary m-3">Volver al lobby</a>
-                    <button type="submit" class="btn btn-primary m-3">
-                        {{#roleId1}} Crear pregunta {{/roleId1}}
-                        {{#roleId3}} Sugerir pregunta {{/roleId3}}
-                    </button>
+                    {{#roleId1}}
+                        <button type="submit" class="btn btn-primary m-3"> Enviar </button>
+                    {{/roleId1}}
+                        {{#roleId3}} Sugerir pregunta 
+                    <button type="submit" class="btn btn-primary m-3"> Enviar </button>
+                    {{/roleId3}}
                 </div>
             </div>
         </div>
