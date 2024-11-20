@@ -223,7 +223,7 @@ CREATE TABLE `preguntas` (
 --
 
 INSERT INTO `preguntas` (`_id`, `texto`, `id_categoria`, `veces_jugada`, `veces_acertada`, `DIFICULTAD`, `id_estado`, `fecha_creacion`) VALUES
-(1, '¿Qué hace el tratamiento kinesico que dijo Anto?', 4, 10, 9, 90, 2, '2024-11-19'),
+(1, '¿Qué mide la escala de Herring?', 4, 10, 9, 90, 2, '2024-11-19'),
 (2, '¿Qué país ha ganado la mayor cantidad de Copas del Mundo de fútbol?', 1, 11, 6, 54.5455, 3, '2024-11-09'),
 (3, '¿Cuál es el continente más grande del mundo?', 2, 10, 9, 90, 3, '2024-11-09'),
 (4, '¿Cuál es la capital de Francia?', 2, 10, 9, 90, 2, '2024-11-09'),
@@ -383,6 +383,10 @@ CREATE TABLE `respuestas` (
 --
 
 INSERT INTO `respuestas` (`_id`, `texto`, `opcion`, `es_correcta`, `id_pregunta`) VALUES
+(1, 'El compromiso articular', 'A', 0, 1),
+(2, 'El compromiso del pilar externo del femur', 'B', 1, 1),
+(3, 'El compromiso de la cabeza del humero', 'C', 0, 1),
+(4, 'El compromiso muscular', 'D', 0, 1),
 (5, 'Brasil', 'A', 1, 2),
 (6, 'Alemania', 'B', 0, 2),
 (7, 'Argentina', 'C', 0, 2),
