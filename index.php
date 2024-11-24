@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once ("Configuration.php");
+require_once __DIR__ . '/vendor/autoload.php';
 $controllerName = isset($_GET["controller"]) ? $_GET["controller"] : "" ;
 $actionName = isset($_GET["action"]) ? $_GET["action"] : "" ;
 
