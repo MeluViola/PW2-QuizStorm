@@ -1,9 +1,9 @@
 body{
     background-image: url("/public/images/fondo2.jpg");
     background-position: center;
-    background-repeat: repeat;
-    height: 100vh;
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #cerrarSesion{
@@ -249,9 +249,15 @@ a-href{
 
 .container {
     background-color: rgba(85, 26, 101, 0.5) !important;
-    height: 520px;
     border-radius: 15px;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    max-width: 100%;  /* Ajusta el máximo ancho al 100% de su contenedor padre */
+    max-height: 100%;  /* Ajusta el máximo alto al 100% de su contenedor padre */
 }
+
+
 
 h1 {
     color: white!important;
