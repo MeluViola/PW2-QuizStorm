@@ -1,6 +1,7 @@
 <?php
 use chillerlan\QRCode\QRCode;
 use chillerlan\QRCode\QROptions;
+
 class QRHelper
 {
     public static function generarQR($username, $profileLink)

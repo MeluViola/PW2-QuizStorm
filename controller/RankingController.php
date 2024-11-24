@@ -1,9 +1,8 @@
 <?php
-require_once __DIR__ . '/../helper/QR.php';
-class RankingController
-    // maneja la visualización del ranking de usuarios en el sistema.
-{
+require_once 'helper/QR.php';
 
+class RankingController
+{
     private $presenter;
     private $usersModel;
 
@@ -35,7 +34,7 @@ class RankingController
         // Generar un código QR para cada usuario del ranking
         foreach ($topUsers as &$user) {
             $profileLink = "/UsuarioPerfil/getProfile?username=" . urlencode($user['USERNAME']);
-            $user['QR'] = QR::generarQR($user['USERNAME'], $profileLink);
+            $user['QR'] = QRHelper::generarQR($user['USERNAME'], $profileLink);
         }
 
         // Renderizar la vista con los datos

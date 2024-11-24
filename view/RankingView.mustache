@@ -10,7 +10,7 @@
                 <thead>
                 <tr>
                     <th scope="col" class="text-center" style="color:white; background: black; border-left: 2px solid white">Usuario</th>
-                    <th scope="col" class="text-center" style="color:white; background: black; border-right: white 2px solid">Puntaje Máximo</th>
+                    <th scope="col" class="text-center" style="color:white; background: black;">Puntaje Máximo</th>
                     <th scope="col" class="text-center" style="color:white; background: black; border-right: 2px solid white;">QR</th>
                 </tr>
                 </thead>
@@ -23,6 +23,7 @@
                         <td class="text-center" style="background: white">{{TOTAL_SCORE}}</td>
                         <td class="text-center" style="background: white">
                             <img src="../public/images/qr/{{USERNAME}}.png" alt="QR de {{USERNAME}}" style="width: 50px; height: 50px;" />
+                        </td>
                     </tr>
                 {{/topUsers}}
                 </tbody>
@@ -33,7 +34,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- Scripts de Bootstrap y jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
