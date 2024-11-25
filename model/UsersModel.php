@@ -154,11 +154,16 @@ class UsersModel
         return $this->database->execute($stmt, ["i", $userId])[0]['MAX_SCORE'];
     }
 
-    public function getTopUsers()
-    {
-        $stmt = $this->database->prepare("SELECT USERNAME, SUM(puntaje) as TOTAL_SCORE FROM USUARIOS JOIN PARTIDAS ON USUARIOS._ID = PARTIDAS.USER_ID GROUP BY USERNAME ORDER BY TOTAL_SCORE DESC");
-        return $this->database->execute($stmt);
-    }
+   public function getTopUsers()
+{
+    // Cambiar la consulta para obtener el puntaje máximo de cada usuario
+    $stmt = $this->database->prepare("SELECT USERNAME, MAX(puntaje) as MAX_SCORE 
+                                      FROM USUARIOS 
+                                      JOIN PARTIDAS ON USUARIOS._ID = PARTIDAS.USER_ID 
+                                      GROUP BY USERNAME 
+                                      ORDER BY MAX_SCORE DESC");
+    return $this->database->execute($stmt);
+}
 
     // Funciones para obtener estadísticas
 
